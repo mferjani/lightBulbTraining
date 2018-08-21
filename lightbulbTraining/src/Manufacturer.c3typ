@@ -1,0 +1,3 @@
+/*** Manufacturer.c3typ* A company that manufactures lightbulbs. */
+
+entity type Manufacturer mixes MetricEvaluatable schema name "MNFCT"

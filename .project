@@ -7,5 +7,6 @@
 	<buildSpec>
 	</buildSpec>
 	<natures>
+		<nature>c3-eclipse.project-devel</nature>
 	</natures>
 </projectDescription>
