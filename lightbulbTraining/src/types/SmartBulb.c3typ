@@ -32,5 +32,7 @@ entity type SmartBulb extends LightBulb mixes MetricEvaluatable type key "SMRT_B
   // NEW FIELD: The current {@link Fixture} to which this smart bulb is attached.
   currentFixture: Fixture stored calc 'fixtureHistory[0].(end == null).to'
 
+  // This bulb's historical measurements.
+  bulbMeasurements: [SmartBulbMeasurementSeries](smartBulb)
 
 }
