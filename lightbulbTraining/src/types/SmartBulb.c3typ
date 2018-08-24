@@ -34,5 +34,19 @@ entity type SmartBulb extends LightBulb mixes MetricEvaluatable type key "SMRT_B
 
   // This bulb's historical measurements.
   bulbMeasurements: [SmartBulbMeasurementSeries](smartBulb)
+  
+  // ------------------- METHODS ----------------------
+  
+  /*** Returns the life span of this smartBulb*/
+  lifeSpanInYears: function(bulbId: string): double js server
+  
+  /*** Return the SmartBulbobject with the longest life span.*/
+  longestLifeSpanBulb: function(): SmartBulb js server
+  
+  /*** Return the SmartBulbobject with the shortestlife span.*/
+  shortestLifeSpanBulb: function(): SmartBulb js server
+  
+  /*** Return a doublerepresenting the average life span (in years) across all SmartBulbobjects. */
+  averageLifeSpan: function(): double js server
 
 }
