@@ -49,4 +49,14 @@ entity type SmartBulb extends LightBulb mixes MetricEvaluatable type key "SMRT_B
   /*** Return a doublerepresenting the average life span (in years) across all SmartBulbobjects. */
   averageLifeSpan: function(): double js server
 
+	/**
+	* This bulb's historical predictions.
+	*/
+	@db(order='descending(timestamp)')
+	bulbPredictions: [SmartBulbPrediction](smartBulb)
+
+	/**
+	* This bulb's latest prediction.
+	*/
+	currentPrediction: SmartBulbPrediction stored calc "bulbPredictions[0]"
 }
